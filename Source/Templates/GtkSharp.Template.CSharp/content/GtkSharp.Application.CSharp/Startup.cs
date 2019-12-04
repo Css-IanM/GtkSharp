@@ -4,6 +4,12 @@ namespace GtkNamespace
 {
     public class Startup
     {
+        private readonly MainWindow _mainWindow;
+
+        public Startup(MainWindow mainWindow)
+        {
+            _mainWindow = mainWindow;
+        }
         public void Run()
         {
             Application.Init();
@@ -11,10 +17,9 @@ namespace GtkNamespace
             var app = new Application("org.GtkNamespace.GtkNamespace", GLib.ApplicationFlags.None);
             app.Register(GLib.Cancellable.Current);
 
-            var win = new MainWindow();
-            app.AddWindow(win);
+            app.AddWindow(_mainWindow);
+            _mainWindow.Show();
 
-            win.Show();
             Application.Run();
         }
     }

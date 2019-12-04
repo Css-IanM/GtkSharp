@@ -29,6 +29,7 @@ namespace GtkNamespace
                         options.AddConfiguration(hostContext.Configuration.GetSection("Logging"))
                     );
                     // Register Dependencies with IoC.
+                    services.AddSingleton<MainWindow>();
                     services.AddSingleton<Startup>();
                 })
                 .ConfigureLogging((hostContext, logging) =>

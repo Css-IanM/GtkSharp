@@ -5,7 +5,7 @@ using UI = Gtk.Builder.ObjectAttribute;
 
 namespace GtkNamespace
 {
-    class MainWindow : Window
+    public class MainWindow : Window
     {
         [UI] private Label _label1 = null;
         [UI] private Button _button1 = null;
